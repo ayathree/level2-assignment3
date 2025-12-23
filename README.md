@@ -8,9 +8,12 @@ This document explains four SQL queries written for a vehicle rental database. E
 
 ### Query Explanations
 
-1. Booking Details Report
+#### Booking Details Report
+
 `Business Need:` Show all customer bookings with vehicle and customer details for customer service tracking.
+
 `SQL Concept:` Multi-Table JOIN
+
 `Key Insight:`
 
 - Uses `INNER JOIN` to connect `bookings` → `users` and `bookings` → `vehicles`

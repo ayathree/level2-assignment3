@@ -8,7 +8,7 @@ This document explains four SQL queries written for a vehicle rental database. E
 
 ### Query Explanations
 
-#### Booking Details Report
+#### 1.Booking Details Report
 
 `Business Need:` Show all customer bookings with vehicle and customer details for customer service tracking.
 
@@ -20,7 +20,7 @@ This document explains four SQL queries written for a vehicle rental database. E
 - Filters with `WHERE users.role = 'Customer'` to exclude administrative users
 - Combines data from three tables into one readable report showing who rented what and when
 
-#### Unused Vehicles Identification
+#### 2.Unused Vehicles Identification
 
 `Business Need:` Find vehicles that have never been rented to optimize fleet inventory.
 
@@ -31,7 +31,7 @@ This document explains four SQL queries written for a vehicle rental database. E
 - `NOT EXISTS` is more efficient than `LEFT JOIN` for checking `"non-existence"`
 - Returns complete vehicle details even with zero booking history
 
-#### Available Cars Filter
+#### 3.Available Cars Filter
 
 `Business Need:` Display all available cars for the rental website or staff interface.
 
@@ -42,7 +42,7 @@ This document explains four SQL queries written for a vehicle rental database. E
 - Relies on proper `ENUM/constraint` design in the database
 - Example of how clean data design enables simple, reliable queries
 
-#### Popular Vehicles Analysis
+#### 4.Popular Vehicles Analysis
 
 `Business Need:` Identify frequently booked vehicles for marketing promotions.
 

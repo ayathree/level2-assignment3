@@ -20,25 +20,34 @@ This document explains four SQL queries written for a vehicle rental database. E
 - Filters with `WHERE users.role = 'Customer'` to exclude administrative users
 - Combines data from three tables into one readable report showing who rented what and when
 
-2. Unused Vehicles Identification
+#### Unused Vehicles Identification
+
 `Business Need:` Find vehicles that have never been rented to optimize fleet inventory.
+
 `SQL Concept:` Subquery with `NOT EXISTS`
+
 `Key Insight:`
 - Uses correlated subquery `(WHERE v.vehicle_id = b.vehicle_id)`
 - `NOT EXISTS` is more efficient than `LEFT JOIN` for checking `"non-existence"`
 - Returns complete vehicle details even with zero booking history
 
-3. Available Cars Filter
+#### Available Cars Filter
+
 `Business Need:` Display all available cars for the rental website or staff interface.
-`SQL Concept:` Basic Filtering with ``WHERE
+
+`SQL Concept:` Basic Filtering with `WHERE`
+
 `Key Insight:`
 - Simple `WHERE` with `AND (status = 'available' AND type = 'car')`
 - Relies on proper `ENUM/constraint` design in the database
 - Example of how clean data design enables simple, reliable queries
 
-4. Popular Vehicles Analysis
+#### Popular Vehicles Analysis
+
 `Business Need:` Identify frequently booked vehicles for marketing promotions.
+
 `SQL Concept:` Aggregation with `GROUP BY` and `HAVING`
+
 `Key Insight:`
 - `GROUP BY` groups bookings by vehicle
 - `COUNT(*)` calculates total bookings per vehicle
